@@ -1,5 +1,5 @@
 import "dotenv/config"
-import puppeteer from "puppeteer-extra";
+import { prepareBrowser } from "./prepareBrowser.mjs";
 
 async function accessInstagramPost(page){
   await page.waitForSelector('main article a[role="link"]');
@@ -22,11 +22,6 @@ async function preparePage(browser){
 const page = await browser.newPage();
 await page.setViewport({ width: 1280, height: 900, deviceScaleFactor: 1});
 return page;
-}
-
-async function prepareBrowser(){
-  const browser = await puppeteer.launch({headless:false});
-  return browser;
 }
 
 async function main(){
