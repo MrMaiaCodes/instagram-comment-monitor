@@ -12,7 +12,7 @@ async function isUserLoggedIn(page, username){
 }
 
 export default async function loginInstagram(page, username, password){
-    await page.goto('https://instagram.com')
+    await page.goto('https://instagram.com');
     const isLoggedIn = await isUserLoggedIn(page, username);
     if(isLoggedIn) {
         return page

@@ -6,6 +6,9 @@
   },
   "main": "src/index.mjs",
   "scripts": {
-    "dev": "node src/index.mjs"
+    "start": "node src/index.mjs",
+    "chrome": "/mnt/c/Program\\ Files/Google/Chrome/Application/chrome.exe --remote-debugging-port=9922",
+    "chrome:windows": "startChrome.bat",
+    "clear": "rm -rf ./data/*"
   }
 }
