@@ -19,7 +19,7 @@ async function main(){
       const pageReady = await accessPostPage(page, post);
       postPages.push(pageReady);
     }
-
+//do universal prompt next
 }
 
 
