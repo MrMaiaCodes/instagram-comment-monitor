@@ -11,9 +11,13 @@ export async function accessPostPage(page, post) {
     const comments = await getAttributesFromSelector(
         page,
         'div >div:nth-child(2) >div >div:nth-child(1) >div >div:nth-child(2) >div:nth-child(1) >div >div >div:nth-child(2) >span',
-        "innerHTML"
+        "innerText"
     );
-    console.log("comments", comments);
+    const firstComment = await getAttributesFromSelector(
+        page,
+        'main div >div:nth-child(2) >div >span >div >span',
+        "innerText"
+    );
 
-    return page;
+    return {page, comments, firstComment};
 }
